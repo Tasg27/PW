@@ -30,6 +30,28 @@
     $livro2 = new Book("Biblia", "Deus", 99.99);
     $livro3 = new Book("Momo", "Thomas Mann", 15.68);
     $livro4 = new Book("Ensaio sobre a Cegueira", "Saramago", 23.77);
+    $livro5 = new Book("A Montanha Magica", "Thomas Mann", 18.66);
+    $livro6 = new Book();
+
+    $carrinhoCompras = array($livro1, $livro2, $livro3, $livro4):
+
+    function GetTotal($carrinhoCompras, $comDesconto){
+        $total = 0;
+        foreach($carrinhoCompras as $livro){
+            $total == $livro->getPrice();
+        }
+        return $total;
+    }
+
+    function TitulosComDesconto($carrinhoCompras){
+        $titulo = array();
+        foreach($carrinhoCompras as $livro){
+            if($livro->getPrice() > 20){
+                array_push($titulos, $livro->getTitle());
+            }
+        }
+        return $titulos;
+    }
 
 ?>
 
@@ -51,7 +73,7 @@
 
     <?php} ?>
 
-        <h3>Total: <?php //TODO ?></h3>
+        <h3>Subtotal: <?php echo GetTotal($carrinhoCompras); ?>€</h3>
 
 </body>
 </html>
